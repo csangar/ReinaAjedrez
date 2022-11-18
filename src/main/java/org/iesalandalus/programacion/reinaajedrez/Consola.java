@@ -11,20 +11,20 @@ public class Consola {
 	private static void Consola() {
 		
 	}
-	public void mostrarMenu() {
+	public static void mostrarMenu() {
 		System.out.println("Menú de opciones disponibles: ");
 		System.out.println("Opción 1:Crear reina por defecto");
 		System.out.println("Opción 2:Crear reina eligiendo color");
 		System.out.println("Opción 3:mover");
 		System.out.println("Opción 4:Salir");
 	}
-	public int elegirOpcionMenu() {
+	public static int elegirOpcionMenu(int opcion2) {
 		int opcion=0;
 		System.out.println("Introduce el numero de la opcion elegida: ");
 		opcion = Entrada.entero();
 		return opcion;
 	}
-	public Color elegirColor() {
+	public static Color elegirColor() {
 		Color color = null;
 		int opcion = 0;
 		do {
@@ -41,7 +41,7 @@ public class Consola {
 		}
 		throw new IllegalArgumentException("Color no válido");
 	}
-	public void mostrarMenuDirecciones() {
+	public static void mostrarMenuDirecciones() {
 		System.out.println("Menu de direcciones:");
 		System.out.println("1: Norte");
 		System.out.println("2: Noreste");
@@ -52,40 +52,39 @@ public class Consola {
 		System.out.println("7: Oeste");
 		System.out.println("8: Noroeste");
 	}
-	public Direccion elegirDireccion() {
+	public static Direccion elegirDireccion() {
 		int opcion =0;
+		Direccion direccion = null;
 		do {
 			System.out.print("Intoduce el numero de la direccion deseada: ");
 			opcion = Entrada.entero();
 		}while(opcion < 1 || opcion>8);
 		switch (opcion) {
 		case 1: 
-			return Direccion.NORTE;
+			direccion= Direccion.NORTE;
 		case 2:
-			return Direccion.NORESTE;
+			direccion= Direccion.NORESTE;
 		case 3:
-			return Direccion.ESTE;
+			direccion= Direccion.ESTE;
 		case 4:
-			return Direccion.SURESTE;
+			direccion=  Direccion.SURESTE;
 		case 5:
-			return Direccion.SUR;
+			direccion=  Direccion.SUR;
 		case 6:
-			return Direccion.SUROESTE;
+			direccion=  Direccion.SUROESTE;
 		case 7:
-			return Direccion.OESTE;
+			direccion=  Direccion.OESTE;
 		case 8:
-			return Direccion.NOROESTE;
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + opcion);
-		}
+			direccion=  Direccion.NOROESTE;
+		}return direccion;
 	}
-	public int elegirPasos() {
+	public static int elegirPasos() {
 		int numPasos =0;
 		System.out.print("Intoduce el numero de pasos deseados: ");
 		numPasos= Entrada.entero();
 		return numPasos;
 	}
-	public void despedirse() {
-		System.out.println("Se acabo la partida");
+	public static void despedirse() {
+		System.out.println("Se acabo la partida , !Hasta la próxima!");
 	}
 }

@@ -16,7 +16,7 @@ public class Reina {
 		}
 		setColor(color);
 	}
-	public Posicion getPosicion() {
+	public  Posicion getPosicion() {
 		return posicion;
 	}
 	private void setPosicion(Posicion posicion) {
